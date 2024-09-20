@@ -1,0 +1,42 @@
+.form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.field {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 15px;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+.forms {
+  padding-bottom: 20px;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.error {
+  padding: 0;
+  color: #dd1313;
+  font-size: 20px;
+}
+
+.label {
+  font-size: 35px;
+  width: 100%;
+}
+/* 
+button {
+  text-align: center;
+  align-items: center;
+  width: 250px;
+} */
