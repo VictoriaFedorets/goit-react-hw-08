@@ -1,67 +1,44 @@
-import ContactForm from "../ContactForm/ContactForm";
-import SearchBox from "../SearchBox/SearchBox";
-import ContactList from "../ContactList/ContactList";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchContacts } from "../../redux/contactsOps";
-import { useEffect } from "react";
-import Loader from "../Loader/Loader";
-import Error from "../Error/Error";
+// import ContactForm from "../ContactForm/ContactForm";
+// import SearchBox from "../SearchBox/SearchBox";
+// import ContactList from "../ContactList/ContactList";
+// import { useDispatch, useSelector } from "react-redux";
+// import { fetchContacts } from "../../redux/contacts/operations";
+// import { useEffect } from "react";
+// import Loader from "../Loader/Loader";
+// import Error from "../Error/Error";
+
+import { lazy, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import Layout from "../Layout/Layout";
+
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
+const RegistrationPage = lazy(() =>
+  import("../../pages/RegistrationPage/RegistrationPage")
+);
+const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage"));
+const ContactsPage = lazy(() =>
+  import("../../pages/ContactsPage/ContactsPage")
+);
 
 export default function App() {
-  const loading = useSelector(state => state.contacts.loading);
-  const error = useSelector(state => state.contacts.error);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
-  // const starterContacts = [
-  //   { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
-  //   { id: "id-2", name: "Hermione Kline", number: "443-89-12" },
-  //   { id: "id-3", name: "Eden Clements", number: "645-17-79" },
-  //   { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
-  // ];
-
-  // const [contacts, setContacts] = useState(() => {
-  //   const savedContacts = window.localStorage.getItem("my-contacts");
-  //   if (savedContacts !== null) {
-  //     return JSON.parse(savedContacts);
-  //   }
-
-  //   return starterContacts;
-  // });
-
-  // const addNewUser = newUsers => {
-  //   setContacts(prevContacts => [...prevContacts, newUsers]);
-  // };
-
-  // const deleteUser = id => {
-  //   setContacts(contacts.filter(contact => contact.id !== id));
-  // };
-
-  // const [searchText, setSearchText] = useState("");
-  // const handleTextChange = event => {
-  //   setSearchText(event.target.value);
-  // };
-
-  // const findNewUser = contacts.filter(contact =>
-  //   contact.name.toLowerCase().includes(searchText.toLowerCase())
-  // );
+  // const loading = useSelector(state => state.contacts.loading);
+  // const error = useSelector(state => state.contacts.error);
+  // const dispatch = useDispatch();
 
   // useEffect(() => {
-  //   window.localStorage.setItem("my-contacts", JSON.stringify(contacts));
-  // }, [contacts]);
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      {loading && <Loader>Loading message...</Loader>}
-      {error && <Error>Error message...</Error>}
-      <SearchBox />
-
-      <ContactList />
-    </div>
+    <Layout>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+        </Routes>
+      </Suspense>
+    </Layout>
   );
 }
