@@ -7,9 +7,12 @@
 // import Loader from "../Loader/Loader";
 // import Error from "../Error/Error";
 
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "../Layout/Layout";
+import { refreshUser } from "../../redux/auth/operations";
+import { selectIsRefreshing } from "../../redux/auth/selectors";
+import { useDispatch, useSelector } from "react-redux";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
@@ -28,8 +31,16 @@ export default function App() {
   // useEffect(() => {
   //   dispatch(fetchContacts());
   // }, [dispatch]);
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
 
-  return (
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <p>Please, wait...</p>
+  ) : (
     <Layout>
       <Suspense fallback={null}>
         <Routes>
