@@ -27,12 +27,22 @@ export default function LoginForm() {
       <Form className={css.form} autoComplete="off">
         <label htmlFor={`${id}-email`} className={css.label}>
           Email
-          <Field type="email" name="email" id={`${id}-email`} />
+          <Field
+            type="email"
+            name="email"
+            id={`${id}-email`}
+            autoComplete="email"
+          />
         </label>
 
         <label htmlFor={`${id}-password`} className={css.label}>
           Password
-          <Field id={`${id}-password`} type="password" name="password" />
+          <Field
+            id={`${id}-password`}
+            type="password"
+            name="password"
+            autoComplete="password"
+          />
         </label>
 
         <button type="submit" disabled={isLoading}>

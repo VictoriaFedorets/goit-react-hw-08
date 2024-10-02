@@ -4,7 +4,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 // масив моїх контактів
 //https://66eb201255ad32cda47bc3db.mockapi.io/contacts
 
-axios.defaults.baseURL = "https://66eb201255ad32cda47bc3db.mockapi.io";
+axios.defaults.baseURL = "https://connections-api.goit.global/";
 
 // Створює і відправляє три екшени
 // tasks/getAll/pending
