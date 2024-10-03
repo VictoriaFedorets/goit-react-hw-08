@@ -2,8 +2,13 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
   display: flex;
-  justify-content: left;
-
+  justify-content: center;
+  background: rgb(198, 201, 200);
+  background: linear-gradient(
+    0deg,
+    rgba(198, 201, 200, 1) 0%,
+    rgba(115, 70, 143, 1) 100%
+  );
   min-width: 320px;
   min-height: 100vh;
   padding-left: 16px;

@@ -3,21 +3,13 @@ import PageTitle from "../../components/PageTitle/PageTitle";
 export default function HomePage() {
   return (
     <div>
-      <PageTitle>
-        Home
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
-        </span>
-      </PageTitle>
+      <PageTitle>Hello!😊</PageTitle>
       <p>Welcome to the phone book!</p>
       <p>
-        This application is designed to create your contact book. Here you can
-        create your contacts, delete them, sort them by name or phone number.
+        A simple and convenient application for creating a personal contact
+        book. You can add, remove, search for existing contacts by name.
       </p>
-      <p>
-        To start working with the application you need to register. If you
-        already have an account, please log in.🤩
-      </p>
+      <p>Register and keep your contacts safe with us!😉</p>
     </div>
   );
 }
