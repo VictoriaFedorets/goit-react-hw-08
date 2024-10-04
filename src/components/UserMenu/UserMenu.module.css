@@ -9,6 +9,13 @@
   font-weight: 700;
 }
 
+button {
+  margin: 30px 0px;
+  padding: 10px 15px;
+  font-size: 35px;
+  border-color: transparent;
+}
+
 button:hover,
 button:focus {
   color: rgb(122, 6, 122);

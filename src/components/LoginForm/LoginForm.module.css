@@ -10,3 +10,17 @@
   flex-direction: column;
   margin-bottom: 16px;
 }
+
+button {
+  margin: 30px 0px;
+  padding: 10px 15px;
+  border: 2px solid black;
+  border-radius: 15px;
+  font-size: 35px;
+  background-color: rgb(148, 101, 192);
+}
+
+button:hover,
+button:focus {
+  color: rgb(122, 6, 122);
+}
