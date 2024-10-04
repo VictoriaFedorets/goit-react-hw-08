@@ -2,10 +2,16 @@
   display: inline-block;
   text-decoration: none;
   padding: 12px;
+  font-size: 25px;
   font-weight: 700;
-  color: #2a363b;
+  color: black;
 }
 
 .link.active {
   color: #e84a5f;
+}
+
+.link:hover,
+.link:focus {
+  color: rgb(122, 6, 122);
 }

@@ -1,8 +1,11 @@
 .form {
-  width: 320px;
+  width: 1220px;
 }
 
 .label {
+  font-size: 27px;
+  font-weight: 700;
+  width: 320px;
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;

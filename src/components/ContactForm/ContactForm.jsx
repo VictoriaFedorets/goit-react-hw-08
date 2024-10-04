@@ -12,7 +12,7 @@ const UserSchema = Yup.object().shape({
     .max(50, "Too Long!")
     .required("Required"),
   number: Yup.string()
-    .matches(/^\d{3}-\d{2}-\d{2}$/, "Format ***-**-**")
+    .matches(/^380-\d{2}-\d{3}-\d{2}-\d{2}$/, "Format 380-**-**-**-**")
     .required("Required"),
 });
 

@@ -5,5 +5,11 @@
 }
 
 .username {
+  padding: 10px;
   font-weight: 700;
+}
+
+button:hover,
+button:focus {
+  color: rgb(122, 6, 122);
 }
