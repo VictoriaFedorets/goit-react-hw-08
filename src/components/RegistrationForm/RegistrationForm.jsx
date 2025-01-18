@@ -9,7 +9,7 @@ import sprite from "../icons/sprite.svg";
 
 import css from "./RegistrationForm.module.css";
 
-const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+// const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -17,7 +17,6 @@ const validationSchema = Yup.object({
     .required("Name is required"),
   email: Yup.string()
     .email("Invalid email, please write a valid email")
-    .matches(emailRegEx, "Enter a valid email address")
     .required("Email is required"),
   password: Yup.string()
     .min(8, "Password must be at least 8 characters.")
@@ -45,9 +44,9 @@ export default function RegistrationForm() {
     setShowConfirmPassword(showConfirmPassword => !showConfirmPassword);
   };
 
-  const handleSubmit = ({ email, password }, actions) => {
-    console.log({ email, password });
-    dispatch(register({ email, password }));
+  const handleSubmit = ({ name, email, password }, actions) => {
+    console.log({ name, email, password });
+    dispatch(register({ name, email, password }));
     actions.resetForm();
   };
 
