@@ -19,13 +19,13 @@
   border: 2px solid black;
   border-radius: 20px;
   font-size: 25px;
-  background-color: #d60745;
+  background-color: #e84a5f;
   transition: border 0.3s ease;
 }
 
 .btnRegister:hover,
 .btnRegister:focus {
-  background-color: #d60745;
+  background-color: #c93548;
   box-shadow: 0px 4px 15px rgba(232, 74, 95, 0.6);
 }
 

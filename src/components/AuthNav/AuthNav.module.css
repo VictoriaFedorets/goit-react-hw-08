@@ -11,12 +11,12 @@
 }
 
 .link .active {
-  color: #d60745;
+  color: #e84a5f;
 }
 
 .link:hover,
 .link:focus {
-  color: #d60745;
+  color: #e84a5f;
 }
 
 @media screen and (min-width: 786px) {
