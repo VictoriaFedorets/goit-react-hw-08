@@ -1,11 +1,12 @@
-import PageTitle from "../../components/PageTitle/PageTitle";
+import WrapperForm from "../../components/WrapperForm/WrapperForm";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+import css from "./RegistrationPage.module.css";
 
 export default function RegistrationPage() {
   return (
-    <div>
-      <PageTitle>Register your account</PageTitle>
+    <WrapperForm>
+      <h2 className={css.title}>Register your account</h2>
       <RegistrationForm />
-    </div>
+    </WrapperForm>
   );
 }

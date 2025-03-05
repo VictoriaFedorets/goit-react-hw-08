@@ -1,17 +1,37 @@
-.link {
-  display: inline-block;
-  text-decoration: none;
-  padding: 12px;
-  font-size: 25px;
-  font-weight: 700;
-  color: black;
+.registratioMenu {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
 }
 
-.link.active {
-  color: #e84a5f;
+.link {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.link .active {
+  color: #d60745;
 }
 
 .link:hover,
 .link:focus {
-  color: rgb(122, 6, 122);
+  color: #d60745;
+}
+
+@media screen and (min-width: 786px) {
+  .registratioMenu {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .link {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .registratioMenu {
+    max-width: 1440px;
+  }
 }

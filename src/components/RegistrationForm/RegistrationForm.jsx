@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import Loader from "../Loader/Loader";
 import { selectIsLoading } from "../../redux/auth/selectors";
-import sprite from "../icons/sprite.svg";
+import sprite from "../../icons/sprite.svg";
 
 import css from "./RegistrationForm.module.css";
 
@@ -62,8 +62,7 @@ export default function RegistrationForm() {
       onSubmit={handleSubmit}
     >
       {({ errors, touched }) => (
-        <Form className={css.form} autoComplete="off">
-          <h2 className={css.title}>Registration form</h2>
+        <Form autoComplete="off">
           <label className={css.label} htmlFor={`${id}-userName`}>
             <p className={css.text}>Enter your name</p>
             <Field
@@ -165,7 +164,9 @@ export default function RegistrationForm() {
             />
           </label>
 
-          <button type="submit">{isLoading ? <Loader /> : "Register"}</button>
+          <button className={css.btnRegister} type="submit">
+            {isLoading ? <Loader /> : "Register"}
+          </button>
         </Form>
       )}
     </Formik>

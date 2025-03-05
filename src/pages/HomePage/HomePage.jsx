@@ -1,15 +1,15 @@
-import PageTitle from "../../components/PageTitle/PageTitle";
+import css from "./HomePage.module.css";
 
 export default function HomePage() {
   return (
-    <div>
-      <PageTitle>Hello!😊</PageTitle>
-      <p>Welcome to the phone book!</p>
-      <p>
+    <ul className={css.homeText}>
+      <li>Hello!</li>
+      <li>Welcome to the phone book!</li>
+      <li>
         A simple and convenient application for creating a personal contact
         book. You can add, remove, search for existing contacts by name.
-      </p>
-      <p>Register and keep your contacts safe with us!😉</p>
-    </div>
+      </li>
+      <li>Register and keep your contacts safe with us!</li>
+    </ul>
   );
 }

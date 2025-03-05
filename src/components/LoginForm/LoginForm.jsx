@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
 import { selectIsLoading } from "../../redux/auth/selectors";
 import { useId } from "react";
-
 import css from "./LoginForm.module.css";
 
 export default function LoginForm() {
@@ -24,7 +23,7 @@ export default function LoginForm() {
       }}
       onSubmit={handleSubmit}
     >
-      <Form className={css.form} autoComplete="off">
+      <Form autoComplete="off">
         <label htmlFor={`${id}-email`} className={css.label}>
           Email
           <Field
@@ -45,7 +44,7 @@ export default function LoginForm() {
           />
         </label>
 
-        <button type="submit" disabled={isLoading}>
+        <button className={css.btnRegister} type="submit" disabled={isLoading}>
           Log In
         </button>
       </Form>
