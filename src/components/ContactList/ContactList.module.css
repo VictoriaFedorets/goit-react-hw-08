@@ -1,6 +1,6 @@
 .contactList {
-  width: 1440px;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px 20px;
+  justify-content: center;
+  gap: 10px 20px;
 }

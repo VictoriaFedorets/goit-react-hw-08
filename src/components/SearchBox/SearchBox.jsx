@@ -3,6 +3,7 @@ import { selectNameFilter, changeFilter } from "../../redux/filters/slice.js";
 import { useDispatch, useSelector } from "react-redux";
 
 import css from "./SeachBox.module.css";
+import WrapperForm from "../WrapperForm/WrapperForm.jsx";
 
 export default function SearchBox() {
   const id = useId();
@@ -15,15 +16,17 @@ export default function SearchBox() {
   };
 
   return (
-    <div className={css.searchBox}>
-      <label htmlFor={`${id}-find`}>Find contacts by name</label>
-      <input
-        className={css.seachInput}
-        id={`${id}-find`}
-        type="text"
-        value={statusFilter}
-        onChange={onFilter}
-      />
-    </div>
+    <WrapperForm>
+      <label className={css.label} htmlFor={`${id}-find`}>
+        Find contacts by name
+        <input
+          className={css.input}
+          id={`${id}-find`}
+          type="text"
+          value={statusFilter}
+          onChange={onFilter}
+        />
+      </label>
+    </WrapperForm>
   );
 }

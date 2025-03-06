@@ -5,9 +5,9 @@ import WrapperForm from "../../components/WrapperForm/WrapperForm";
 import ContactList from "../../components/ContactList/ContactList";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import SearchBox from "../../components/SearchBox/SearchBox";
-
 import { fetchContacts } from "../../redux/contacts/operations";
 import { selectLoading, selectError } from "../../redux/contacts/selectors";
+import css from "./ContactsPage.module.css";
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -19,13 +19,16 @@ export default function ContactsPage() {
   }, [dispatch]);
 
   return (
-    <WrapperForm>
-      <p>Your contacts</p>
-      <h1>Phonebook</h1>
-      <ContactForm />
+    <>
+      <WrapperForm>
+        <h1 className={css.title}>Phonebook</h1>
+        <ContactForm />
+      </WrapperForm>
+
       <SearchBox />
       <div>{isLoading && !isError && "Loading contacts..."}</div>
+      <h2 className={css.contTitle}>Your contacts</h2>
       <ContactList />
-    </WrapperForm>
+    </>
   );
 }

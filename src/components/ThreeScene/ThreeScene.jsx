@@ -190,7 +190,9 @@ const ThreeScene = () => {
     animate();
 
     return () => {
-      mountRef.current.removeChild(renderer.domElement);
+      if (mountRef.current && renderer.domElement) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
       window.removeEventListener("resize", updateSize);
     };
   }, []);

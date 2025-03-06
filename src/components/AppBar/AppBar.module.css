@@ -1,7 +1,14 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
   margin-bottom: 6px;
   color: #fff;
   border-bottom: 1px solid #2a363b;
+}
+
+@media screen and (min-width: 786px) {
+  .header {
+    justify-content: space-between;
+  }
 }

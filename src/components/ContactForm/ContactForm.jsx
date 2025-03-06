@@ -40,7 +40,6 @@ export default function ContactForm() {
 
   return (
     <Formik
-      //   обэкт початкового стану(початкових значень)
       initialValues={{
         name: "",
         number: "",
@@ -48,33 +47,34 @@ export default function ContactForm() {
       validationSchema={UserSchema}
       onSubmit={handleSubmit}
     >
-      <Form className={css.form}>
-        <div className={css.forms}>
-          <label className={css.label} htmlFor={`${id}-name`}>
-            Name
-          </label>
+      <Form>
+        <label className={css.label} htmlFor={`${id}-name`}>
+          <p className={css.text}>Name</p>
+
           <Field
-            className={css.field}
+            className={css.input}
             type="text"
             name="name"
             id={`${id}-name`}
           />
-          <ErrorMessage name="name" component="span" className={css.error} />
-        </div>
+          <ErrorMessage name="name" component="div" className={css.error} />
+        </label>
 
-        <div className={css.forms}>
-          <label className={css.label} htmlFor={`${id}-number`}>
-            Number
-          </label>
+        <label className={css.label} htmlFor={`${id}-number`}>
+          <p className={css.text}>Number</p>
+
           <Field
-            className={css.field}
+            className={css.input}
             type="text"
             name="number"
             id={`${id}-number`}
           />
-          <ErrorMessage name="number" component="span" className={css.error} />
-        </div>
-        <button type="submit">Add contact</button>
+          <ErrorMessage name="number" component="div" className={css.error} />
+        </label>
+
+        <button className={css.btnRegister} type="submit">
+          Add contact
+        </button>
       </Form>
     </Formik>
   );
