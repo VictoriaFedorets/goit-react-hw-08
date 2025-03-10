@@ -6,8 +6,12 @@ export default function HomePage() {
       <li>Hello!</li>
       <li>Welcome to the phone book!</li>
       <li>
-        A simple and convenient application for creating a personal contact
-        book. You can add, remove, search for existing contacts by name.
+        It is a digital contact book that allows you to store important
+        information about your connections in one convenient place.
+      </li>
+      <li>
+        There is an active and live environment where you can find the right
+        contact, add a new one, or edit existing data.
       </li>
       <li>Register and keep your contacts safe with us!</li>
     </ul>
